@@ -71,10 +71,6 @@ public class PhoneBookNode {
         return phoneNum;
     }
 
-    public PhoneBookNode getNext() {
-        return next;
-    }
-
     @Override
     public String toString() {
         

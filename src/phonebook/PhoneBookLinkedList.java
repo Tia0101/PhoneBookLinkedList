@@ -24,7 +24,7 @@ public class PhoneBookLinkedList {
         System.out.printf("%n%s%n%n","Bellingham's Phone Book:");
         while (current != null) {
             System.out.println(current.toString());
-            current = current.getNext();
+            current = current.next;
         }
     }
 

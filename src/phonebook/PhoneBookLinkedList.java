@@ -21,10 +21,15 @@ public class PhoneBookLinkedList {
 
     public void printPhoneBook() {
         PhoneBookNode current = first;
-        System.out.printf("%n%s%n%n","Bellingham's Phone Book:");
-        while (current != null) {
+        System.out.printf("%n%s%n%n","Whatcom County Phone Book:");
+
+        if (current == null) {
+            System.out.printf("%s%n%n","There are no contacts currently in the phone book.");
+        } else {
+            while (current != null) {
             System.out.println(current.toString());
             current = current.next;
+            }
         }
     }
 

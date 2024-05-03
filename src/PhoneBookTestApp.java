@@ -7,37 +7,54 @@ public class PhoneBookTestApp {
 
     public static void main (String [] args){
         Scanner input = new Scanner(System.in);
-        PhoneBookLinkedList test = new PhoneBookLinkedList();
+        PhoneBookLinkedList whatcom = new PhoneBookLinkedList();
         boolean quit;
+        
+        System.out.printf("%n%s%n","Welcome to the Whatcom county phone book program");
 
         do {
-            System.out.println("Would you like to add, view, edit or delete contacts from the Whatcom county phone book?");
+            System.out.println("Please enter: add, view, edit, delete or quit to interact with Whatcom county phone book.");
             String selection = input.nextLine().toLowerCase();
+            quit = false;
             switch (selection) {
                 case "add":
-                test.add("Tia","VanderYacht","9999 main st","ferndale","WA","999-999-9999");
-                test.add("Tia","VanderYacht","9999 main st","ferndale","WA","999-999-9999");
-                    break;
+                    System.out.println("Please enter contact's first name");
+                    String firstName = input.nextLine();
+                    System.out.println("Please enter contact's last name");
+                    String lastName = input.nextLine();
+                    System.out.println("Please enter contact's street address(ex:9999 Main st)");
+                    String streetAddress = input.nextLine();
+                    System.out.println("Please enter contact's city");
+                    String city = input.nextLine();
+                    System.out.println("Please enter contact's phone number");
+                    String phoneNum = input.nextLine();
+                    
+                    whatcom.add(firstName,lastName, streetAddress,city, phoneNum);
+                break;
+
                 case "edit":
                     //placeholder
                 break;
+
                 case "view":
-                test.printPhoneBook();
+                    whatcom.printPhoneBook();
                 break;
+
                 case "delete":
-                    //placeholder
+                    System.out.println("Please enter contact's first name.");
+                    firstName = input.nextLine();
+                    System.out.println("Please enter contact's last name.");
+                    lastName = input.nextLine();
+                    whatcom.delete(firstName, lastName);
                 break;
-    
-                default://place holder
                 
-            }
-            System.out.println("Do you want to exit the program?");
-            String exit = input.nextLine();
-   
-            if (exit.equalsIgnoreCase("yes")){
-               quit = true;
-            } else {
-               quit = false;
+                case "quit":
+                    System.out.printf("%n%s%n", "Thank you have a nice day!");
+                    quit = true;
+                break;
+
+                default: System.out.println("Invalid entry please try again");
+                
             }
         } while(!quit);
         

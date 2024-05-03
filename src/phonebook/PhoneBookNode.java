@@ -7,17 +7,15 @@ public class PhoneBookNode {
     private String lastName;
     private String streetAddress;
     private String city;
-    private String state;
     private String phoneNum;
     
     protected PhoneBookNode next;
 
-    public PhoneBookNode(String firstName,String lastName,String streetAddress,String city,String state,String phoneNum ) {
+    public PhoneBookNode(String firstName,String lastName,String streetAddress,String city,String phoneNum ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.streetAddress = streetAddress;
         this.city = city;
-        this.state = state;
         this.phoneNum = phoneNum;
         this.next = null;
     }
@@ -55,14 +53,6 @@ public class PhoneBookNode {
         return city;
     }
 
-    public void setState() {
-        this.state = state;
-    }
-
-    public String getState() {
-        return state;
-    }
-
     public void setPhoneNum() {
         this.phoneNum = phoneNum;
     }
@@ -74,7 +64,7 @@ public class PhoneBookNode {
     @Override
     public String toString() {
         
-        return String.format("Name: %s %s%nAddress: %s, %s, %s%nPhone Number: %s%n%s", getFirstName(),getLastName(),getStreetAddress(),getCity(),
-        getState(),getPhoneNum(),"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        return String.format("Name: %s %s%nAddress: %s, %s%nPhone Number: %s%n%s", getFirstName(),getLastName(),getStreetAddress(),getCity(),
+        getPhoneNum(),"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }

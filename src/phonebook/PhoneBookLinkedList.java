@@ -1,7 +1,7 @@
 package phonebook;
 
 public class PhoneBookLinkedList {
-    private PhoneBookNode first;
+    protected PhoneBookNode first;
 
     public void add(String firstName,String lastName,String streetAddress,String city,String phoneNum) {
         PhoneBookNode newNode = new PhoneBookNode(firstName, lastName, streetAddress, city, phoneNum);
@@ -13,52 +13,59 @@ public class PhoneBookLinkedList {
             while (current.next != null) {
                 current = current.next;
             }
-            current.next = new PhoneBookNode(firstName, lastName, streetAddress, city, phoneNum);
+            current.next = newNode;
         }
-        
     }
     
-    /*public void edit(String firstName, String lastName, String streetAddress, String city, String phoneNum){
+   /*  public void edit(String firstName, String lastName, String streetAddress, String city, String phoneNum){
         PhoneBookNode current = first;
-        
+
         if (first == null){
             System.out.println("There are no contacts in the phone book.");
-            
         }
 
+        while(current != null){
+            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)){
+                current.setFristName();
+                current.setLastName();
+                current.setStreetAddress();
+                current.setCity();
+                current.setPhoneNum();
+            }
+            current = current.next;
+        }
     }*/
 
-
     public void delete(String firstName, String lastName) {
-        PhoneBookNode prev = first;
-        PhoneBookNode current = first.next;
-        
-        if(first == null){
-            System.out.println("There are no contact to delete.");
-            //return;
+        if (first == null) {
+            System.out.println("There are no contacts to delete.");
+            return;
         }
-        if(first.getFirstName().equalsIgnoreCase(firstName) && first.getLastName().equalsIgnoreCase(lastName)){
+        if (first.getFirstName().equalsIgnoreCase(firstName) && first.getLastName().equalsIgnoreCase(lastName)) {
             first = first.next;
             System.out.println("Contact deleted successfully!");
-            //return;
-        } 
-
-        while(current!= null) {
-            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)) {
+            return;
+        }
+    
+        PhoneBookNode prev = first;
+        PhoneBookNode current = first.next;
+    
+        while (current != null) {
+            if (current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)) {
                 prev.next = current.next;
                 System.out.println("Contact deleted successfully!");
-            
-            } 
+                return;
+            }
             prev = current;
             current = current.next;
-        
         }
-        System.out.println("Contact not Found");
-
+    
+        // Contact not found if the loop completes without returning
+        System.out.println("Contact not found.");
     }
 
     public void printPhoneBook() {
-        PhoneBookNode current = first;
+        PhoneBookNode current = first; 
         System.out.printf("%n%s%n%n","Whatcom County Phone Book:");
 
         if (current == null) {
@@ -70,7 +77,6 @@ public class PhoneBookLinkedList {
             }
         }
     }
-
 }
         
 

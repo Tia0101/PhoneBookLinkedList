@@ -20,7 +20,7 @@ public class PhoneBookNode {
         this.next = null;
     }
 
-    public void setFristName() {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -28,7 +28,7 @@ public class PhoneBookNode {
         return firstName;
     }
 
-    public void setLastName() {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
 
     }
@@ -37,7 +37,7 @@ public class PhoneBookNode {
         return lastName;
     }
 
-    public void setStreetAddress() {
+    public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
     }
 
@@ -45,7 +45,7 @@ public class PhoneBookNode {
         return streetAddress;
     }
 
-    public void setCity() {
+    public void setCity(String city) {
         this.city = city;
     }
 
@@ -53,7 +53,7 @@ public class PhoneBookNode {
         return city;
     }
 
-    public void setPhoneNum() {
+    public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
 

@@ -35,15 +35,28 @@ public class PhoneBookTestApp {
                         
                         whatcom.add(firstName,lastName, streetAddress,city, phoneNum);
 
-                        System.out.println("Do you want to delete another contact? (yes/no)");
+                        System.out.println("Do you want to add another contact? (yes/no)");
                         String choice = input.nextLine().toLowerCase();
                         exit = choice.equals("no"); // Update exit based on user's choice
                     } while(!exit);
                 break;
 
                 case "edit":
+                    System.out.println("Please enter the first name of the contact you want to update");
+                    String oldFirstName = input.nextLine();
+                    System.out.println("Please enter the last name of the contact you want to update");
+                    String oldLastName = input.nextLine();
+                    if(whatcom.contactExists(oldFirstName, oldLastName)) {
+                    System.out.println("Please enter contacts first name");
+                    String newFirstName = input.nextLine();
+                    System.out.println("Please enter contacts last name");
+                    String newLastName = input.nextLine();
+
+                    whatcom.editName(oldFirstName,oldLastName,newFirstName,newLastName);
                     
-                
+                    } else {
+                        System.out.println("Contact not found. Update not successful");
+                    }
                 break;
 
                 case "view":

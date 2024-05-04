@@ -3,6 +3,18 @@ package phonebook;
 public class PhoneBookLinkedList {
     protected PhoneBookNode first;
 
+    public boolean contactExists(String firstName,String lastName) {
+        PhoneBookNode current = first;
+
+        while(current != null) {
+            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
     public void add(String firstName,String lastName,String streetAddress,String city,String phoneNum) {
         PhoneBookNode newNode = new PhoneBookNode(firstName, lastName, streetAddress, city, phoneNum);
 
@@ -17,24 +29,30 @@ public class PhoneBookLinkedList {
         }
     }
     
-   /*  public void edit(String firstName, String lastName, String streetAddress, String city, String phoneNum){
+    public void editName(String oldFirstName, String oldLastName, String newFirstName, String newLastName) {
         PhoneBookNode current = first;
 
         if (first == null){
             System.out.println("There are no contacts in the phone book.");
         }
+        
+        boolean contactFound = false;
 
         while(current != null){
-            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)){
-                current.setFristName();
-                current.setLastName();
-                current.setStreetAddress();
-                current.setCity();
-                current.setPhoneNum();
+            if(current.getFirstName().equalsIgnoreCase(oldFirstName) && current.getLastName().equalsIgnoreCase(oldLastName)){
+                current.setFirstName(newFirstName);
+                current.setLastName(newLastName);
+                contactFound = true;
+                break;
             }
             current = current.next;
         }
-    }*/
+        if(!contactFound){
+            System.out.println("Contact not found!");
+        } else {
+            System.out.println("Contact updated successfully");
+        }
+    }
 
     public void delete(String firstName, String lastName) {
         if (first == null) {
@@ -65,7 +83,7 @@ public class PhoneBookLinkedList {
     }
 
     public void printPhoneBook() {
-        PhoneBookNode current = first; 
+        PhoneBookNode current = first;
         System.out.printf("%n%s%n%n","Whatcom County Phone Book:");
 
         if (current == null) {

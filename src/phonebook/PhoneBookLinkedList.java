@@ -3,11 +3,11 @@ package phonebook;
 public class PhoneBookLinkedList {
     protected PhoneBookNode first;
 
-    public boolean contactExists(String firstName,String lastName) {
+    public boolean checkName(String firstName,String lastName) {
         PhoneBookNode current = first;
 
         while(current != null) {
-            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)) {
+            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName) ) {
                 return true;
             }
             current = current.next;
@@ -18,14 +18,18 @@ public class PhoneBookLinkedList {
     public void add(String firstName,String lastName,String streetAddress,String city,String phoneNum) {
         PhoneBookNode newNode = new PhoneBookNode(firstName, lastName, streetAddress, city, phoneNum);
 
-        if(first == null){
+        if(first == null || lastName.compareToIgnoreCase(first.getLastName()) < 0 ){
+            newNode.next = first;
             first = newNode;
         } else {
-            PhoneBookNode current = first;
-            while (current.next != null) {
+            PhoneBookNode prevNode = first;
+            PhoneBookNode current = first.next;
+            while (current != null && lastName.compareToIgnoreCase(current.getLastName()) > 0) {
+                prevNode = current;
                 current = current.next;
             }
-            current.next = newNode;
+            prevNode.next = newNode;
+            newNode.next = current;
         }
     }
     
@@ -50,7 +54,7 @@ public class PhoneBookLinkedList {
         if(!contactFound){
             System.out.println("Contact not found!");
         } else {
-            System.out.println("Contact updated successfully");
+            System.out.println("Contact updated successfully!");
         }
     }
 
@@ -87,7 +91,7 @@ public class PhoneBookLinkedList {
         System.out.printf("%n%s%n%n","Whatcom County Phone Book:");
 
         if (current == null) {
-            System.out.printf("%s%n%n","There are no contacts currently in the phone book.");
+            System.out.printf("%s%n","There are no contacts currently in the phone book.");
         } else {
             while (current != null) {
             System.out.println(current.toString());

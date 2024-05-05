@@ -94,18 +94,18 @@ public class PhoneBookTestApp {
                     break;
 
                     case 2:
-                    System.out.println("Please enter street address (5555 Main St)");
-                    String newStreetAddress = input.nextLine();
-                    System.out.println("Please enter city");
-                    String newCity = input.nextLine();
-            
-                    whatcom.editAddress(firstName,lastName,newStreetAddress,newCity);
+                        System.out.println("Please enter street address (5555 Main St)");
+                        String newStreetAddress = input.nextLine();
+                        System.out.println("Please enter city");
+                        String newCity = input.nextLine();
+                
+                        whatcom.editAddress(firstName,lastName,newStreetAddress,newCity);
                     break;
 
                     case 3:
-                    System.out.println("Please enter new phone number");
-                    String newPhoneNum = input.nextLine();
-                    whatcom.editPhoneNum(firstName, lastName, newPhoneNum);
+                        System.out.println("Please enter new phone number");
+                        String newPhoneNum = input.nextLine();
+                        whatcom.editPhoneNum(firstName, lastName, newPhoneNum);
                     break;
 
                     default:System.out.println("Invalid Entry please try again");

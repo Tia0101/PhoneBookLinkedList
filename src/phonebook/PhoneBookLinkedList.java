@@ -58,6 +58,55 @@ public class PhoneBookLinkedList {
         }
     }
 
+    public void editAddress(String firstName, String lastName, String newStreetAddress, String newCity) {
+        PhoneBookNode current = first;
+
+        if (first == null){
+            System.out.println("There are no contacts in the phone book.");
+        }
+        
+        boolean contactFound = false;
+
+        while(current != null){
+            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)){
+                current.setStreetAddress(newStreetAddress);
+                current.setCity(newCity);
+                contactFound = true;
+                break;
+            }
+            current = current.next;
+        }
+        if(!contactFound){
+            System.out.println("Contact not found!");
+        } else {
+            System.out.println("Contact updated successfully!");
+        }
+    }
+
+    public void editPhoneNum(String firstName, String lastName, String newPhonehum) {
+        PhoneBookNode current = first;
+
+        if (first == null){
+            System.out.println("There are no contacts in the phone book.");
+        }
+        
+        boolean contactFound = false;
+
+        while(current != null){
+            if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)){
+                current.setPhoneNum(newPhonehum);
+                contactFound = true;
+                break;
+            }
+            current = current.next;
+        }
+        if(!contactFound){
+            System.out.println("Contact not found!");
+        } else {
+            System.out.println("Contact updated successfully!");
+        }
+    }
+
     public void delete(String firstName, String lastName) {
         if (first == null) {
             System.out.println("There are no contacts to delete.");

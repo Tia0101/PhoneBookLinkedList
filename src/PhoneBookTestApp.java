@@ -95,15 +95,15 @@ public class PhoneBookTestApp {
             //Checks if the contact exists
             if(whatcom.doesContactExist(firstName, lastName)) {
 
-                System.out.println("What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone NUmber");
+                System.out.println("What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number");
                 int choice = input.nextInt();
                 input.nextLine();
 
                 switch (choice) {
                     case 1:
-                        System.out.println("Please enter contacts first name");
+                        System.out.println("Please enter contact's first name");
                         String newFirstName = input.nextLine();
-                        System.out.println("Please enter contacts last name");
+                        System.out.println("Please enter contact's last name");
                         String newLastName = input.nextLine();
                         //Edit the contact's name in phone linked list
                         whatcom.editName(firstName,lastName,newFirstName,newLastName);
@@ -129,7 +129,7 @@ public class PhoneBookTestApp {
                         break;
                 }
             } else {
-                System.out.println("Update not successful");
+                System.out.println("Contact not found!");
             }
             System.out.println("Do you want to update another contact (yes/no)");
             String leave = input.nextLine().toLowerCase();

@@ -1,18 +1,80 @@
-## Getting Started
+Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
+view
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Whatcom County Phone Book:
 
-## Folder Structure
+Name: Jason Ball
+Address: 5555 3rd st, Bellingham
+Phone Number: 222-222-2222
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Jane Smith
+Address: 9999 Main st, Ferndale
+Phone Number: 111-111-1111
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Tia Vanderyacht
+Address: 4444 Main st, Ferndale
+Phone Number: 555-555-5555
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The workspace contains two folders by default, where:
+Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
+update
+Please enter the first name of the contact you want to update
+Jane
+Please enter the last name of the contact you want to update
+Smith
+What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number
+1
+Please enter contact's first name
+Jane
+Please enter contact's last name
+Adams
+Contact updated successfully!
+Do you want to update another contact (yes/no)
+yes
+Please enter the first name of the contact you want to update
+Tia
+Please enter the last name of the contact you want to update
+VanderYacht
+What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number
+2
+Please enter street address (5555 Main St)
+1010 Skyline dr
+Please enter city
+Bellingham
+Contact updated successfully!
+Do you want to update another contact (yes/no)
+yes
+Please enter the first name of the contact you want to update
+Jason
+Please enter the last name of the contact you want to update
+Ball
+What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number
+3
+Please enter new phone number
+999-999-9999
+Contact updated successfully!
+Do you want to update another contact (yes/no)
+no
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
+view
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Whatcom County Phone Book:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Name: Jane Adams
+Address: 9999 Main st, Ferndale
+Phone Number: 111-111-1111
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Jason Ball
+Address: 5555 3rd st, Bellingham
+Phone Number: 999-999-9999
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Tia Vanderyacht
+Address: 1010 Skyline dr, Bellingham
+Phone Number: 555-555-5555
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## Dependency Management
+Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
+quit
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Thank you have a nice day!

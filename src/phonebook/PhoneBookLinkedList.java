@@ -75,20 +75,20 @@ public class PhoneBookLinkedList {
         while(current != null) {
             if(current.getFirstName().equalsIgnoreCase(oldFirstName) && current.getLastName().equalsIgnoreCase(oldLastName)) {
                 //If the contact is found update the name
-                if(prev == null) {
-                    first =  current.next;
-                } else {
-                    prev.next = current.next;// Skips the current node and removes it from the linked list
-                }
-                //New name set
                 current.setFirstName(newFirstName);
                 current.setLastName(newLastName);
                 contactNotFound = false;
+                if(prev == null) {
+                    first =  current.next;
+                } else {
+                    prev.next = current.next;//remove the current node from the linked list
+                }
                 //Edited node added to the linked list
                 add(newFirstName, newLastName, current.getStreetAddress(), current.getCity(), current.getPhoneNum());
                 break;
             }
             //Move to the next node
+            prev = current;
             current = current.next;
         }
 

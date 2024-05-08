@@ -136,7 +136,7 @@ public class PhoneBookLinkedList {
     }// End editAddress method
 
     //Method to edit a contact's phone number
-    public void editPhoneNum(String firstName, String lastName, String newPhonehum) {
+    public void editPhoneNum(String firstName, String lastName, String newPhoneNum) {
         PhoneBookNode current = first;
 
         //If the list is empty print message
@@ -148,7 +148,7 @@ public class PhoneBookLinkedList {
         //Loop through the linked list to find the contact
         while(current != null) {
             if(current.getFirstName().equalsIgnoreCase(firstName) && current.getLastName().equalsIgnoreCase(lastName)){
-                current.setPhoneNum(newPhonehum);//Update the phone number
+                current.setPhoneNum(newPhoneNum);//Update the phone number
                 contactNotFound = false;
                 break;
             }

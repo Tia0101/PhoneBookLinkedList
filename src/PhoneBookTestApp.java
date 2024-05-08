@@ -38,8 +38,8 @@ public class PhoneBookTestApp {
                 break;
 
                 case "view":
-                    whatcom.sort();
-                    whatcom.printPhoneBook();//printPhoneBook method called
+                    whatcom.sort();//Sort method called to sort the linked list for the phone book before printing
+                    whatcom.printPhoneBook();//printPhoneBook method called to view the phone book
                 break;
 
                 case "delete":

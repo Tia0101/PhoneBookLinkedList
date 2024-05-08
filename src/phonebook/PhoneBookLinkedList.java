@@ -35,70 +35,77 @@ public class PhoneBookLinkedList {
     }// End doesContactExist method
 
     //Method to add a contact to the linked list
-    public void add(String firstName,String lastName,String streetAddress,String city,String phoneNum) {
-        //Creata a new node with the user input
+    public void add(String firstName, String lastName, String streetAddress, String city, String phoneNum) {
+        // Create a new node with the user input
         PhoneBookNode newNode = new PhoneBookNode(firstName, lastName, streetAddress, city, phoneNum);
-        // If the list is empty or the new last name comes before the first node's last name alphabetically
-        if(first == null || lastName.compareToIgnoreCase(first.getLastName()) < 0 ) {
-            //Set the new node's next to the first node
-            newNode.next = first;
-            //Set the new node as the first node
+        // If the list is empty, set the new node as the first node
+        if(first == null) {
             first = newNode;
         } else {
-            //Find the correct position to insert the new node
-            PhoneBookNode prevNode = first;
-            PhoneBookNode current = first.next;//Start at the second node
-            while (current != null && lastName.compareToIgnoreCase(current.getLastName()) > 0) {
-                //Move to the next node
-                prevNode = current;
+            // Find the last node
+            PhoneBookNode current = first;
+            while(current.next != null) {
                 current = current.next;
             }
-            //Insert the new node at the correct position
-            prevNode.next = newNode;
-            newNode.next = current;
+            // Add the new node to the end of the list
+            current.next = newNode;
         }
+        System.out.println("Contact added successfully!");
     }// End add method
     
+    public void sort() {
+        // Initialize sorted linked list
+        PhoneBookNode sorted = null;
+        PhoneBookNode current = first;
+    
+        while (current != null) {
+            // Store next for next iteration
+            PhoneBookNode next = current.next;
+    
+            // Insert current in sorted linked list
+            if (sorted == null || sorted.getLastName().compareTo(current.getLastName()) >= 0) {
+                current.next = sorted;
+                sorted = current;
+            } else {
+                // Locate the node before the point of insertion
+                PhoneBookNode currentSorted = sorted;
+                while (currentSorted.next != null && currentSorted.next.getLastName().compareTo(current.getLastName()) < 0) {
+                    currentSorted = currentSorted.next;
+                }
+                // Insert current in sorted linked list
+                current.next = currentSorted.next;
+                currentSorted.next = current;
+            }
+    
+            // Update current
+            current = next;
+        }
+    
+        // Update head to point to sorted linked list
+        first = sorted;
+    }// End sort method
+
     //Method to edit a contact's name
     public void editName(String oldFirstName, String oldLastName, String newFirstName, String newLastName) {
         PhoneBookNode current = first;//Start at the first node
-        PhoneBookNode prev = null;
-
+        
         //If the list is empty print message
         if (current == null) {
             System.out.println("There are no contacts in the phone book.");
         }
-        //flag for printing message if contact is not found
-        boolean contactNotFound = true;
-        
         //Loop through the linked list to find the contact
         while(current != null) {
             if(current.getFirstName().equalsIgnoreCase(oldFirstName) && current.getLastName().equalsIgnoreCase(oldLastName)) {
                 //If the contact is found update the name
                 current.setFirstName(newFirstName);
                 current.setLastName(newLastName);
-                contactNotFound = false;
-                if(prev == null) {
-                    first =  current.next;
-                } else {
-                    prev.next = current.next;//remove the current node from the linked list
-                }
-                //Edited node added to the linked list
-                add(newFirstName, newLastName, current.getStreetAddress(), current.getCity(), current.getPhoneNum());
+                System.out.println("Contact updated successfully!");
                 break;
             }
             //Move to the next node
-            prev = current;
             current = current.next;
-        }
-
-        if(contactNotFound) {
-            System.out.println("Contact not found!");
-        } else {
-            System.out.println("Contact updated successfully!");
-        }
     }
-
+}
     //Method to edit a contact's address
     public void editAddress(String firstName, String lastName, String newStreetAddress, String newCity) {
         PhoneBookNode current = first;//Start at the first node
@@ -168,7 +175,7 @@ public class PhoneBookLinkedList {
             System.out.println("Contact deleted successfully!");
             return;
         }
-        //Start at the first node
+        //Initialize the previous and current nodes
         PhoneBookNode prev = first;
         PhoneBookNode current = first.next;
         

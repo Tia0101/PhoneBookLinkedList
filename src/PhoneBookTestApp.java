@@ -38,6 +38,7 @@ public class PhoneBookTestApp {
                 break;
 
                 case "view":
+                    whatcom.sort();
                     whatcom.printPhoneBook();//printPhoneBook method called
                 break;
 

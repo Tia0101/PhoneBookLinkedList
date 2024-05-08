@@ -1,57 +1,108 @@
+Welcome to the Whatcom county phone book program
+
 Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
 view
 
 Whatcom County Phone Book:
 
-Name: Jason Ball
-Address: 5555 3rd st, Bellingham
+There are no contacts currently in the phone book.
+
+Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
+Add
+Please enter contact's first name
+Tia            
+Please enter contact's last name
+VanderYacht
+Please enter contact's street address(ex:9999 Main st)
+2222 Main St
+Please enter contact's city
+Ferndale
+Please enter contact's phone number
+222-222-2222
+Contact added successfully!
+Do you want to add another contact? (yes/no)
+Yes
+Please enter contact's first name
+Jamie
+Please enter contact's last name
+Adams
+Please enter contact's street address(ex:9999 Main st)
+4444 Skyview dr
+Please enter contact's city
+Bellingham
+Please enter contact's phone number
+333-333-3333
+Contact added successfully!
+Do you want to add another contact? (yes/no)
+yes
+Please enter contact's first name
+Rachel 
+Please enter contact's last name
+Bash
+Please enter contact's street address(ex:9999 Main st)
+1111 3rd st
+Please enter contact's city
+Ferndale
+Please enter contact's phone number
+444-444-4444
+Contact added successfully!
+Do you want to add another contact? (yes/no)
+no
+
+Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
+view
+
+Whatcom County Phone Book:
+
+Name: Jamie Adams
+Address: 4444 Skyview dr, Bellingham
+Phone Number: 333-333-3333
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Rachel Bash
+Address: 1111 3rd st, Ferndale
+Phone Number: 444-444-4444
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Tia VanderYacht
+Address: 2222 Main St, Ferndale
 Phone Number: 222-222-2222
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Name: Jane Smith
-Address: 9999 Main st, Ferndale
-Phone Number: 111-111-1111
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Name: Tia Vanderyacht
-Address: 4444 Main st, Ferndale
-Phone Number: 555-555-5555
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.
 update
 Please enter the first name of the contact you want to update
-Jane
+Tia
 Please enter the last name of the contact you want to update
-Smith
+Vanderyacht
 What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number
-1
-Please enter contact's first name
-Jane
-Please enter contact's last name
-Adams
+3
+Please enter new phone number
+777-777-7777
 Contact updated successfully!
 Do you want to update another contact (yes/no)
 yes
 Please enter the first name of the contact you want to update
-Tia
+Rachel
 Please enter the last name of the contact you want to update
-VanderYacht
+Bash
+What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number
+1
+Please enter contact's first name
+Rachel
+Please enter contact's last name
+Zanders
+Contact updated successfully!
+Do you want to update another contact (yes/no)
+yes
+Please enter the first name of the contact you want to update
+Jamie
+Please enter the last name of the contact you want to update
+Adams
 What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number
 2
 Please enter street address (5555 Main St)
 1010 Skyline dr
 Please enter city
 Bellingham
-Contact updated successfully!
-Do you want to update another contact (yes/no)
-yes
-Please enter the first name of the contact you want to update
-Jason
-Please enter the last name of the contact you want to update
-Ball
-What would do you want to update? Enter 1 for Name. Enter 2 Address. Enter 3 Phone Number
-3
-Please enter new phone number
-999-999-9999
 Contact updated successfully!
 Do you want to update another contact (yes/no)
 no
@@ -61,17 +112,17 @@ view
 
 Whatcom County Phone Book:
 
-Name: Jane Adams
-Address: 9999 Main st, Ferndale
-Phone Number: 111-111-1111
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Name: Jason Ball
-Address: 5555 3rd st, Bellingham
-Phone Number: 999-999-9999
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Name: Tia Vanderyacht
+Name: Jamie Adams
 Address: 1010 Skyline dr, Bellingham
-Phone Number: 555-555-5555
+Phone Number: 333-333-3333
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Tia VanderYacht
+Address: 2222 Main St, Ferndale
+Phone Number: 777-777-7777
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Rachel Zanders
+Address: 1111 3rd st, Ferndale
+Phone Number: 444-444-4444
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please enter: add, view, update, delete or quit to interact with Whatcom county phone book.

@@ -1,2 +1,4 @@
-In this lab I created a simple program using Java.This program took user input and checked to see if the entry already existed.
-If the entry did not exist in the phone book it would make a new entry.You can also search for an entry. I was resposbile for writting all the code for this program.
+Overview: This is a simple program takes user input and checked to see if the entry already existed.
+If the entry does not exist in the phone book it will make a new entry.
+Tools/Skills used: I wrote this program using JAVA.
+Reflection: I don't have any plans to work any farther on this project.
